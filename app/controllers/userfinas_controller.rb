@@ -7,6 +7,15 @@ class UserfinasController < ApplicationController
     end
 
     def show
-        userfina 
+        userfina = Userfina.find_by(users_params)
+        if !userfina
+            return head :not_found
+            else
+                render json: {
+                    userfina,
+                    users: userfina.users
+                    }, status: 201
+            end
+        end
     end
 end
