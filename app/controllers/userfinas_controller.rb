@@ -38,6 +38,16 @@ class UserfinasController < ApplicationController
       end
     end
   
-
+    def destroy
+      userfina = Userfina.find(params[:id])
+      userfina.destroy
+      head :no_content
+    end
+  
+    private
+  
+    def userfina_params
+      params.permit(:name, :income, :year)
+    end
   end
   
