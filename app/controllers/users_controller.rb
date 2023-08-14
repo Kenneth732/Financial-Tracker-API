@@ -1,7 +1,18 @@
 
 
 class UsersController < ApplicationController
-
+    def index
+        user = User.all 
+        render json: {
+            status_code: 201,
+            message:"success",
+            data:{
+                users:[
+                    user]
+                }
+        },status: :ok
+                    
+    end
     def create
         user = User.create(user_params)
         if user.valid?
