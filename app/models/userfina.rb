@@ -1,0 +1,2 @@
+class Userfina < ApplicationRecord
+end
