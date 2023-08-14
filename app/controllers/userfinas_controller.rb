@@ -1,8 +1,12 @@
 class UserfinasController < ApplicationController
     def index
-        userfina = Userfina.all 
-        render json: userfina
+        userfinas = Userfina.all
+        render json: {
+            userfinas
+        }
     end
 
-    def 
+    def show
+        userfina 
+    end
 end
